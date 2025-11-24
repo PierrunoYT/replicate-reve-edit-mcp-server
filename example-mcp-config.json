@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "reve-edit": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "https://github.com/PierrunoYT/replicate-reve-edit-mcp-server.git"
+      ],
+      "env": {
+        "REPLICATE_API_TOKEN": "your_replicate_api_token_here"
+      }
+    }
+  }
+}

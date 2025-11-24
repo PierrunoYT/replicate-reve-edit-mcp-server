@@ -1,0 +1,49 @@
+{
+  "name": "replicate-reve-edit-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Reve Edit - image editing model from Reve that transforms existing images using natural language while preserving spatial relationships, lighting, and overall structure",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": "./build/index.js",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "dev": "tsc --watch",
+    "start": "node build/index.js",
+    "test": "node test-server.js",
+    "get-path": "node get-path.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PierrunoYT/replicate-reve-edit-mcp-server.git"
+  },
+  "homepage": "https://github.com/PierrunoYT/replicate-reve-edit-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/PierrunoYT/replicate-reve-edit-mcp-server/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "reve",
+    "reve-edit",
+    "replicate",
+    "image-editing",
+    "ai",
+    "spatial-intelligence",
+    "typescript",
+    "model-context-protocol"
+  ],
+  "author": "PierrunoYT",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "replicate": "^0.34.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

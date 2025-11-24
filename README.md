@@ -9,8 +9,6 @@ A Model Context Protocol (MCP) server that provides access to Reve Edit - an ima
 
 **🔗 Repository**: [https://github.com/PierrunoYT/replicate-reve-edit-mcp-server](https://github.com/PierrunoYT/replicate-reve-edit-mcp-server)
 
-> **🚀 Ready to use!** Pre-built executable included - no compilation required.
->
 > **✅ Enhanced Reliability**: Server handles missing API keys gracefully without crashes and includes robust error handling.
 
 ## Features
@@ -48,14 +46,14 @@ git clone https://github.com/PierrunoYT/replicate-reve-edit-mcp-server.git
 cd replicate-reve-edit-mcp-server
 ```
 
-### 3. Install Dependencies (Optional)
-
-The server is pre-built, but if you want to modify it:
+### 3. Install Dependencies and Build
 
 ```bash
 npm install
 npm run build
 ```
+
+This will compile the TypeScript source code and create the executable in the `build/` directory.
 
 ## Configuration
 
@@ -316,14 +314,16 @@ Edit an image:
 ### Project Structure
 ```
 ├── src/
-│   └── index.ts          # Main MCP server implementation
-├── build/                # Compiled JavaScript (ready to use)
+│   └── index.ts          # Main MCP server implementation (TypeScript source)
+├── build/                # Compiled JavaScript (created after running `npm run build`)
 ├── test-server.js        # Server testing utility
 ├── get-path.js          # Configuration path helper
 ├── example-mcp-config.json # Example configuration
 ├── package.json         # Project metadata and dependencies
 └── tsconfig.json        # TypeScript configuration
 ```
+
+**Note**: The `build/` directory is created when you run `npm run build`. Make sure to build the project before using it.
 
 ### Scripts
 - `npm run build` - Compile TypeScript to JavaScript
@@ -377,11 +377,13 @@ This server uses the Replicate platform, which charges per image editing operati
 8. Verify your account has sufficient balance on Replicate
 
 ### Build issues
-If you need to rebuild the server:
+If you need to build or rebuild the server:
 ```bash
 npm install
 npm run build
 ```
+
+Make sure the `build/` directory exists and contains `index.js` before configuring your MCP client. If the build fails, check that you have Node.js 18+ installed and TypeScript is properly installed.
 
 ### Configuration issues
 Use the helper script to get the correct path:
